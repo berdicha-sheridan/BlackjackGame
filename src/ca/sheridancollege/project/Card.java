@@ -19,7 +19,8 @@ public abstract class Card
      * Students should implement this method for their specific children classes 
      * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
      */
-    
+    public enum CardValue {ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEM, JACK, QUEEN, KING};
+    public enum Suit {HEARTS, DIAMONDS, CLUBS, SPADES};
     @Override
     public abstract String toString();
     
