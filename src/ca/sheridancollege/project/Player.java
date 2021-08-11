@@ -12,15 +12,15 @@ package ca.sheridancollege.project;
 public abstract class Player
 {
     private String playerID; //the unique ID for this player
-    
+    private int balance;
     /**
      * A constructor that allows you to set the player's unique ID
      * @param name the unique ID to assign to this player.
      * 
      */
-    public Player(String name)
+    public Player(String id)
     {
-        playerID= name;
+        this.playerID= id;
     }
     
     /**
@@ -28,7 +28,7 @@ public abstract class Player
      */
     public String getPlayerID() 
     {
-        return playerID;
+        return this.playerID;
     }
 
     /**
@@ -38,6 +38,24 @@ public abstract class Player
     public void setPlayerID(String givenID) 
     {
         playerID = givenID;
+    }
+    
+    //get user balance
+    public int getBalance()
+    {
+       return this.balance; 
+    }
+    
+    //setting user balance
+    public void setBalance(int newBalance)
+    {
+        this.balance=newBalance;
+    }
+    
+    //placing user bet
+    public void placeBet(int bet)
+    {
+       //need coding
     }
     
     /**

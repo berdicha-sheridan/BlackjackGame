@@ -54,4 +54,6 @@ public class GroupOfCards
         size = givenSize;
     }
     
+    
+    
 }//end class

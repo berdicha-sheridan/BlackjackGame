@@ -16,7 +16,7 @@ public abstract class Game
 {
     private final String gameName;//the title of the game
     private ArrayList <Player> players;// the players of the game
-    
+    private Deck gameDeck;
     public Game(String givenName)
     {
         gameName = givenName;
@@ -30,6 +30,8 @@ public abstract class Game
     {
         return gameName;
     }
+    
+    
     
      /**
      * @return the players of this game
@@ -45,6 +47,13 @@ public abstract class Game
     public void setPlayers(ArrayList <Player> players) 
     {
         this.players = players;
+    }
+    
+    public ArrayList <Player> playersInGame()
+    {
+        
+        return null;
+        //needs coding
     }
     
     /**
