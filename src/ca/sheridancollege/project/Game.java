@@ -52,7 +52,7 @@ public abstract class Game
     public ArrayList <Player> playersInGame()
     {
         
-        return null;
+        return players;
         //needs coding
     }
     

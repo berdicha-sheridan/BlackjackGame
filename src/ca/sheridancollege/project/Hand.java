@@ -5,20 +5,29 @@
  */
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author senalidesilva
  */
-class Deck extends GroupOfCards {
+public class Hand extends GroupOfCards{
     
- 
-
-    public Deck(int givenSize) {
+    private ArrayList <Card> cards;
+    
+    
+    public Hand(int givenSize) {
         super(givenSize);
     }
     
-    public void shuffle(){
-        super.shuffle();
+    //get hand cards
+    public ArrayList <Card> getCards()
+    {
+        return super.showCards();
+       
     }
+
+    
+    
     
 }
