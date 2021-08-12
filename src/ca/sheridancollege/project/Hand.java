@@ -9,25 +9,54 @@ import java.util.ArrayList;
 
 /**
  *
- * @author senalidesilva
+ * @author kyle
  */
 public class Hand extends GroupOfCards{
     
-    private ArrayList <Card> cards;
-    
-    
-    public Hand(int givenSize) {
-        super(givenSize);
-    }
-    
-    //get hand cards
-    public ArrayList <Card> getCards()
-    {
-        return super.showCards();
-       
-    }
+     int score;
 
+    public Hand(int size) {
+        super(size);
+    }
     
     
+    public int calcScore(ArrayList<String>cards)
+    {
+        for(int i=0; i<cards.size(); i++)
+        {
+            
+        }
+         return 0;
+        
+    
+    }
+    
+    /*public void setCards()
+    {       
+        this.cards = cards;
+    }*/
+    
+    public ArrayList<String> getCards (ArrayList<String>cards)
+    {
+       return cards;
+    }
+    
+    public void showCards(ArrayList<String>cards)
+    {
+        for(int i=0; i<cards.size(); i++)
+        System.out.println(cards.indexOf(i));
+    }
+    
+    public void returnCards(ArrayList<String>cards, ArrayList<String>card)
+    {
+        // remove players cards
+        // reset array list 
+        
+
+        cards.clear(); // remove players cards
+        card.clear();
+        
+        
+    }
     
 }

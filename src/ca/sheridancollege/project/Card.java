@@ -13,6 +13,9 @@ package ca.sheridancollege.project;
  */
 public abstract class Card 
 {
+    private CardValue cardValue;
+    private Suit cardType;
+    
     //default modifier for child classes
     
     /**
@@ -21,7 +24,15 @@ public abstract class Card
      */
     public enum CardValue {ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEM, JACK, QUEEN, KING};
     public enum Suit {HEARTS, DIAMONDS, CLUBS, SPADES};
-    @Override
+    
+    public Card(CardValue value, Suit type){
+        this.cardValue=value;
+        this.cardType=type;
+        
+    }
+    
+    
+    @Override 
     public abstract String toString();
     
 }

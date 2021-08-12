@@ -19,10 +19,14 @@ public class GroupOfCards
    
     //The group of cards, stored in an ArrayList
     private ArrayList <Card> cards;
-    private int size;//the size of the grouping
+    Card card;
+    private int size;
+ 
+    //the size of the grouping
     
     public GroupOfCards(int givenSize)
     {
+        
         size = givenSize;
     }
     
@@ -52,6 +56,14 @@ public class GroupOfCards
      */
     public void setSize(int givenSize) {
         size = givenSize;
+    }
+    
+     public void addCardsToDeck()
+    {
+        for(int i = 0; i<=52; i++)
+        {
+            cards.add(card);
+        }
     }
     
     
