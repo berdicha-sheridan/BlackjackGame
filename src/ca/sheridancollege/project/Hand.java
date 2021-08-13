@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class Hand {
 
+    final int scoreGoal = 21;
     private ArrayList<Card> cards;
 
     public ArrayList<Card> getCards() {
@@ -28,14 +29,17 @@ public class Hand {
         this.cards.add(newCard);
     }
     
-    public int calcScore(int aceValue) {
+    public int calcScore() {
         int score = 0;
+        boolean hasAce = false;
+        int aceCount = 0;
 
         // Loops through Cards to calc score accounting for player-chosen ace value
         for (Card card : cards) {
             switch (card.getValue()) {
                 case ACE:
-                    score += aceValue;
+                    hasAce = true;
+                    aceCount++;
                     break;
                 case TWO:
                     score += 2;
@@ -75,6 +79,16 @@ public class Hand {
                     break;
                 default:
                     break;
+            }
+        }
+
+        if (score > scoreGoal && hasAce) {
+            for (int i = 0; i < aceCount; i++) {
+                score += 1;
+            }
+        } else {
+            for (int i = 0; i < aceCount; i++) {
+                score += 11;
             }
         }
 

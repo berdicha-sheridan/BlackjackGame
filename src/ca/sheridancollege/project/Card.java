@@ -12,22 +12,7 @@ package ca.sheridancollege.project;
  * @author dancye, 2018
  * @author rlesteban, 2021
  */
-public abstract class Card {
-    public enum CardValue {
-        ACE,
-        TWO,
-        THREE,
-        FOUR,
-        FIVE,
-        SIX,
-        SEVEN,
-        EIGHT,
-        NINE,
-        TEN,
-        JACK,
-        QUEEN,
-        KING
-    };
+public class Card {
 
     public enum Suit {
         HEARTS,
@@ -36,9 +21,35 @@ public abstract class Card {
         SPADES
     };
 
+    public enum CardValue {
+        ACE (11),
+        TWO (2),
+        THREE (3),
+        FOUR (4),
+        FIVE (5),
+        SIX (6),
+        SEVEN (7),
+        EIGHT (8),
+        NINE (9),
+        TEN (10),
+        JACK (10),
+        QUEEN (10),
+        KING (10);
+
+        private int cardValue;
+
+        private CardValue (int cardValue) {
+            this.cardValue = cardValue;
+        }
+
+        public int getCardValue() {
+            return cardValue;
+        }
+    };
+    
     private CardValue value;
     private Suit suit;
-    
+
     public Card(CardValue value, Suit suit) {
         this.value = value;
         this.suit = suit;
@@ -57,6 +68,8 @@ public abstract class Card {
      * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
      */
     @Override 
-    public abstract String toString();
+    public String toString() {
+        return this.value + " of " + this.suit;
+    };
     
 }
