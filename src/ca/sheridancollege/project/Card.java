@@ -13,7 +13,7 @@ package ca.sheridancollege.project;
  * @author rlesteban, 2021
  */
 public abstract class Card {
-    public enum Value {
+    public enum CardValue {
         ACE,
         TWO,
         THREE,
@@ -36,15 +36,15 @@ public abstract class Card {
         SPADES
     };
 
-    private Value value;
+    private CardValue value;
     private Suit suit;
     
-    public Card(Value value, Suit suit) {
+    public Card(CardValue value, Suit suit) {
         this.value = value;
         this.suit = suit;
     }
 
-    public Value getValue() {
+    public CardValue getValue() {
         return value;
     }
 
