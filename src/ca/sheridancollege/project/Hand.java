@@ -24,6 +24,10 @@ public class Hand {
         this.cards = cards;
     }
     
+    public void addCard(Card newCard) {
+        this.cards.add(newCard);
+    }
+    
     public int calcScore(int aceValue) {
         int score = 0;
 

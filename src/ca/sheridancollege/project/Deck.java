@@ -21,4 +21,8 @@ class Deck extends GroupOfCards {
         super.shuffle();
     }
     
+    public Card dealCard() {
+        return showCards().remove((int) (Math.random() * showCards().size()));
+    }
+    
 }

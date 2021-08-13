@@ -31,7 +31,11 @@ public abstract class Game
         return gameName;
     }
     
-    
+    // @return the deck currently used by the game
+    public Deck getDeck()
+    {
+        return gameDeck;
+    }
     
      /**
      * @return the players of this game
@@ -67,7 +71,5 @@ public abstract class Game
      * player.
      */
     public abstract void declareWinner();
-
-   
     
 }//end class

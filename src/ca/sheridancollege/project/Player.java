@@ -9,59 +9,53 @@ package ca.sheridancollege.project;
  * A class that models each Player in the game. Players have an identifier, which should be unique.
  * @author dancye, 2018
  */
-public abstract class Player
-{
+public class Player extends Dealer {
+    
     private String playerID; //the unique ID for this player
     private int balance;
-    /**
-     * A constructor that allows you to set the player's unique ID
-     * @param name the unique ID to assign to this player.
-     * 
-     */
-    public Player(String id)
-    {
-        this.playerID= id;
-    }
+    private int bet;
+    
+    public Player() {}
     
     /**
-     * @return the playerID
+     * A constructor that allows you to set the player's unique ID
+     * @param id - the unique ID assigned to this player.
+     * @param currGame - current game player is participating in.
      */
-    public String getPlayerID() 
-    {
+    public Player(String id, Game currGame) {
+        super(currGame);
+        this.playerID = id;
+    }
+    
+    // @return the playerID
+    public String getPlayerID() {
         return this.playerID;
     }
 
-    /**
-     * Ensure that the playerID is unique
-     * @param givenID the playerID to set
-     */
-    public void setPlayerID(String givenID) 
-    {
-        playerID = givenID;
+    // Ensure that the playerID is unique -- TODO not the problem of the player class, handle it in main, when assigning IDs
+    // @param givenID - the unique ID to be assigned to this player.
+    public void setPlayerID(String givenID) {
+        this.playerID = givenID;
     }
     
-    //get user balance
-    public int getBalance()
-    {
+    public int getBalance() {
        return this.balance; 
     }
     
-    //setting user balance
-    public void setBalance(int newBalance)
-    {
-        this.balance=newBalance;
+    public void setBalance(int newBalance) {
+        this.balance = newBalance;
     }
     
-    //placing user bet
-    public void placeBet(int bet)
-    {
-       //need coding
+    public int getBet() {
+        return this.bet;
     }
     
-    /**
-     * The method to be instantiated when you subclass the Player class
-     * with your specific type of Player and filled in with logic to play your game.
-     */
-    public abstract void play();
-    
+    // Reserve the amount from player's balance and record it as a bet
+    public void placeBet(int bet) {
+       if (bet > getBalance()) {
+           this.bet = getBalance();
+       } else {
+           this.bet = bet;
+       }
+    }
 }

@@ -13,17 +13,27 @@ import java.util.ArrayList;
  */
 public class Dealer {
     
-    private ArrayList <Hand> hand;
+    private Hand hand;
+    private Game currentGame;
     
-    public ArrayList<Hand> showCards()
-    {
-        return hand;
+    public Dealer() {}
+    
+    public Dealer(Game currGame) {
+        this.currentGame = currGame;
+    }
+    
+    public void setCurrGame(Game currGame) {
+        this.currentGame = currGame;
+    }
+    
+    // @return cards that the dealer currently holds
+    public ArrayList<Card> showCards() {
+        return hand.getCards();
     }
    
-    //not sure if this is correct, please check 
-    public void hit(ArrayList<Hand> newCard)
-    {
-        this.hand =newCard;
+    // Draws a random card from the game deck and adds it to the current hand
+    public void hit() {
+        hand.addCard(currentGame.getDeck().dealCard());
     }
     
 }
