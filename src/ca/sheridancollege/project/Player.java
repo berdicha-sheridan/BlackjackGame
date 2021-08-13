@@ -11,31 +11,38 @@ package ca.sheridancollege.project;
  */
 public class Player extends Dealer {
     
-    private String playerID; //the unique ID for this player
+    private String playerName; //the unique ID for this player
     private int balance;
     private int bet;
     
     public Player() {}
     
     /**
-     * A constructor that allows you to set the player's unique ID
-     * @param id - the unique ID assigned to this player.
+     * A constructor that allows you to set the player's name and the curr game
+     * @param name - the player name assigned to this player.
      * @param currGame - current game player is participating in.
      */
-    public Player(String id, Game currGame) {
+    public Player(String name, Game currGame) {
         super(currGame);
-        this.playerID = id;
+        this.playerName = name;
     }
     
-    // @return the playerID
-    public String getPlayerID() {
-        return this.playerID;
+    /**
+     * A constructor that allows you to set the player's name
+     * @param name - the player name assigned to this player.
+     */
+    public Player(String name) {
+        this.playerName = name;
+    }
+    
+    // @return the playerName
+    public String getPlayerName() {
+        return this.playerName;
     }
 
-    // Ensure that the playerID is unique -- TODO not the problem of the player class, handle it in main, when assigning IDs
-    // @param givenID - the unique ID to be assigned to this player.
-    public void setPlayerID(String givenID) {
-        this.playerID = givenID;
+    // @param givenName - the player name to be assigned to this player.
+    public void setPlayerName(String givenName) {
+        this.playerName = givenName;
     }
     
     public int getBalance() {
