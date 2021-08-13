@@ -1,17 +1,19 @@
 /**
- * SYST 17796 Project Winter 2019 Base code.
- * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
- */
-package ca.sheridancollege.project;
-
-/**
+ * SYST 17796 Project 2021
+ * File: Card.java
+ * 
  * A class to be used as the base Card class for the project. Must be general
  * enough to be instantiated for any Card game. Students wishing to add to the code 
  * should remember to add themselves as a modifier.
+ * 
  * @author dancye, 2018
- * @author rlesteban, 2021
+ * @author Esteban Rodas Lopez, 2021
+ * @author Agampodi De Silva, 2021
+ * @author Alexander Berdichevskiy, 2021
+ * @author Kyle Strong, 2021
  */
+package ca.sheridancollege.project;
+
 public class Card {
 
     public enum Suit {
@@ -69,7 +71,7 @@ public class Card {
      */
     @Override 
     public String toString() {
-        return this.value + " of " + this.suit;
+        return this.value + " " + this.suit;
     };
     
 }

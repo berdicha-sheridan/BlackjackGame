@@ -1,34 +1,53 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * SYST 17796 Project 2021
+ * File: Hand.java
+ * 
+ * The class that models a hand of cards.
+ * 
+ * @author dancye, 2018
+ * @author Esteban Rodas Lopez, 2021
+ * @author Agampodi De Silva, 2021
+ * @author Alexander Berdichevskiy, 2021
+ * @author Kyle Strong, 2021
  */
+
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author senalidesilva
- * @author rlesteban, 2021
- */
 public class Hand {
 
-    final int scoreGoal = 21;
-    private ArrayList<Card> cards;
+    final int scoreGoal = 21;   // Constant for score goal
+    private ArrayList<Card> cards = new ArrayList<Card>();
 
+    /**
+     * 
+     * @return list of cards
+     */
     public ArrayList<Card> getCards() {
         return cards;
     }
 
+    /**
+     * 
+     * @param cards
+     */
     public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
     
+    /**
+     * 
+     * @param newCard
+     */
     public void addCard(Card newCard) {
         this.cards.add(newCard);
     }
     
+    /**
+     * 
+     * @return
+     */
     public int calcScore() {
         int score = 0;
         boolean hasAce = false;
@@ -93,5 +112,14 @@ public class Hand {
         }
 
         return score;
+    }
+    
+    @Override
+    public String toString() {
+        String handString = "";
+        for (Card card : this.cards) {
+            handString += card.toString() + " ";
+        }
+        return handString;
     }
 }

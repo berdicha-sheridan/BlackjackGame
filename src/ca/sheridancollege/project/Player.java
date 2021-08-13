@@ -1,14 +1,19 @@
 /**
- * SYST 17796 Project Winter 2019 Base code.
- * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
+ * SYST 17796 Project 2021
+ * File: Player.java
+ * 
+ * The class that represents players of the game. Child of Dealer class as the
+ * dealers functionality is used as a base functionality here.
+ * 
+ * @author dancye, 2018
+ * @author Esteban Rodas Lopez, 2021
+ * @author Agampodi De Silva, 2021
+ * @author Alexander Berdichevskiy, 2021
+ * @author Kyle Strong, 2021
  */
+
 package ca.sheridancollege.project;
 
-/**
- * A class that models each Player in the game. Players have an identifier, which should be unique.
- * @author dancye, 2018
- */
 public class Player extends Dealer {
     
     private String playerName; //the unique ID for this player
@@ -44,7 +49,7 @@ public class Player extends Dealer {
     public void setPlayerName(String givenName) {
         this.playerName = givenName;
     }
-    
+
     public int getBalance() {
        return this.balance; 
     }

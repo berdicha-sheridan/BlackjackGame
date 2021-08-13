@@ -1,18 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * SYST 17796 Project 2021
+ * File: Deck.java
+ * 
+ * A class to represent the card Deck. A child class of GroupOfCards.
+ * 
+ * @author dancye, 2018
+ * @author Esteban Rodas Lopez, 2021
+ * @author Agampodi De Silva, 2021
+ * @author Alexander Berdichevskiy, 2021
+ * @author Kyle Strong, 2021
  */
+
 package ca.sheridancollege.project;
 
-/**
- *
- * @author senalidesilva
- */
 class Deck extends GroupOfCards {
     
- 
-
     public Deck(int givenSize) {
         super(givenSize);
     }

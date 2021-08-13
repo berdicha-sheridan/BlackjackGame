@@ -1,17 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * SYST 17796 Project 2021
+ * File: Main.java
+ * 
+ * Main class to handle initialization of the game and setting up players.
+ * 
+ * @author dancye, 2018
+ * @author Esteban Rodas Lopez, 2021
+ * @author Agampodi De Silva, 2021
+ * @author Alexander Berdichevskiy, 2021
+ * @author Kyle Strong, 2021
  */
+
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author senalidesilva
- */
 public class Main {
     
     public static void main(String[] args) {
@@ -37,21 +41,19 @@ public class Main {
         }
 
         do {
-            Game newGame = new Game();  
-            newGame.setPlayers(players);
-            newGame.setDealer(dealer);
+            Game newGame = new Game("Blackjack", players);  
             
             for (int i = 0; i < players.size(); i++) {
-                players.get(0).setCurrGame(newGame);
+                players.get(i).setCurrGame(newGame);
             }
             dealer.setCurrGame(newGame);
+            
+            newGame.play(players, dealer);
 
             System.out.println("Do you want to play another round?");
             System.out.println("Enter 1 for yes, 0 for no.");
             continueOrNo = sc.nextInt();
             sc.nextLine(); // Sanitize newline
         } while( continueOrNo == 1);
-        
     }
-    
 }

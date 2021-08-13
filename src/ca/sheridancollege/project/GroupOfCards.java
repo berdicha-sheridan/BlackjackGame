@@ -1,19 +1,21 @@
 /**
- * SYST 17796 Project Winter 2019 Base code.
- * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
+ * SYST 17796 Project 2021
+ * File: Dealer.java
+ * 
+ * A concrete class that represents any grouping of cards for a Game.
+ * 
+ * @author dancye, 2018
+ * @author Esteban Rodas Lopez, 2021
+ * @author Agampodi De Silva, 2021
+ * @author Alexander Berdichevskiy, 2021
+ * @author Kyle Strong, 2021
  */
+
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * A concrete class that represents any grouping of cards for a Game.
- * HINT, you might want to subclass this more than once.
- * The group of cards has a maximum size attribute which is flexible for reuse.
- * @author dancye
- */
 public class GroupOfCards 
 {
    
@@ -26,7 +28,7 @@ public class GroupOfCards
     
     public GroupOfCards(int givenSize)
     {
-        
+        cards = new ArrayList<Card>(size);
         size = givenSize;
     }
     
@@ -58,14 +60,10 @@ public class GroupOfCards
         size = givenSize;
     }
     
-     public void addCardsToDeck()
+    public void addCardsToDeck(ArrayList<Card> cards)
     {
-        for(int i = 0; i<=52; i++)
-        {
-            cards.add(card);
+        for (Card card : cards) {
+            this.cards.add(card);
         }
-    }
-    
-    
-    
-}//end class
+    } 
+}
